@@ -4,12 +4,16 @@ on:
   schedule:
     # Runs every 5 minutes from 4:00 AM to 10:00 AM UTC (9:30 AM to 3:30 PM IST), Mon-Fri
     - cron: '*/5 4-10 * * 1-5'
-  workflow_dispatch: # Allows you to manually click a "Run" button to test it
+  workflow_dispatch: 
 
 jobs:
   scan-market:
     runs-on: ubuntu-latest
     
+    # FIX: Forces GitHub to use the newer Node 24 engine to silence the deprecation warning
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+      
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -17,7 +21,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.10' # Adjust if you are using a different version
+          python-version: '3.10' 
 
       - name: Install Dependencies
         run: |
@@ -26,7 +30,6 @@ jobs:
 
       - name: Execute Moonshot Scanner
         env:
-          # This maps your GitHub Secrets to the variables os.getenv() is looking for
           UPSTOX_ACCESS_TOKEN: ${{ secrets.UPSTOX_ACCESS_TOKEN }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
