@@ -1,0 +1,34 @@
+# Environments
+.env
+.venv/
+venv/
+env/
+ENV/
+
+# Python Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# VS Code / IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS generated files
+Thumbs.db
+ehthumbs.db
+.DS_Store
+
+# Logs and databases
+*.log
+*.sqlite3
+
+# GitHub Actions local testing (optional but good practice)
+act/
