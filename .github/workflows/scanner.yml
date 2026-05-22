@@ -3,7 +3,7 @@ name: Nifty Options Scanner
 on:
   schedule:
     # Runs every 5 minutes from 4:00 AM to 10:00 AM UTC (9:30 AM to 3:30 PM IST), Mon-Fri
-    - cron: '*/5 4-10 * * 1-5'
+    - cron: '*/5 * * * *'
   workflow_dispatch: 
 
 jobs:
