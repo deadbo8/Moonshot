@@ -15,8 +15,8 @@ TELEGRAM_CHAT_ID = os.getenv('TELEGRAM_CHAT_ID')
 
 INDEX_KEY = 'NSE_INDEX|Nifty 50'
 EXPIRY_DATE = '2026-06-02'
-MIN_IV = 0.2              # REMINDER: Change back to your strategy minimums for live scanning
-MIN_VEGA = 2.6            # REMINDER: Change back to your strategy minimums for live scanning
+MIN_IV = 0.23              # REMINDER: Change back to your strategy minimums for live scanning
+MIN_VEGA = 3.0           # REMINDER: Change back to your strategy minimums for live scanning
 MIN_STRIKE_DISTANCE = 1000  # REMINDER: Change back to your strategy minimums for live scanning
 # -----------------------------------------------
 
